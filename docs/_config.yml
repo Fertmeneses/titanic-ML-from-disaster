@@ -1,5 +1,5 @@
 title: Titanic - Kaggle
-logo: ../Images/00_FM_pic.jpg
+logo: ../assets/00_FM_pic.png
 description:  Machine Learning from Disaster
 show_downloads: True
 theme: jekyll-theme-minimal
