@@ -1,5 +1,5 @@
-title: Titanic - Kaggle
-logo: /assets/00_FM_pic.png
-description:  Machine Learning from Disaster
+title: Titanic - Machine Learning project
+logo: https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/00_FM_pic.png
+description:  A python project made for the Kaggle competition: Titanic - Machine Learning from Disaster
 show_downloads: True
 theme: jekyll-theme-minimal
