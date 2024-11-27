@@ -10,7 +10,7 @@ The progamming code is written in Python language, including well-known librarie
 
 - - - - - - - - - - - - - - - - - -
 
-<img src="assets/Titanic_old_pic.png" width=100%>
+<img src="assets/Titanic_colorized.png" width=100%>
 
 [Intro about the Titanic tragedy].
 
