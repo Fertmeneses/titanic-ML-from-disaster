@@ -16,13 +16,13 @@ The Titanic started its voyage in Southampton (UK) on 10 April 1912, made stops 
 
 The collision with the iceberg ocurred around 23:40, with most of the passengers already gone to bed, and the evacuation was carried out in a very disorganized way, with unequal treatment of passengers from different classes. The 20 lifeboats carried by the ship could only accomodate 1,178 people, out of the 2,224 passenger and crew. The vessel RMS Carpathia arrived about 2 hours after the sinking, rescuing all survivors at that time.
 
-<img src="assets/Timeline_Titanic.png" width=90%>
+<img src="assets/Timeline_Titanic.png" width=100%>
 
 - - - - - - - - - - - - - - - - - -
 
 [Machine learning challenge and accuracy expectations]
 
-<img src="assets/Leaderboard_Expectations.png" width=80%>
+<img src="assets/LB_Titanic_figure.png" width=100%>
 
 - - - - - - - - - - - - - - - - - -
 
