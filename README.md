@@ -14,7 +14,7 @@ The Titanic started its voyage in Southampton (UK) on 10 April 1912, made stops 
 
 The collision with the iceberg ocurred around 23:40, with most of the passengers already gone to bed, and the evacuation was carried out in a very disorganized way, with unequal treatment of passengers from different classes. **The 20 lifeboats carried by the ship could only accomodate 1,178 people, out of the 2,224 passengers and crew**. The vessel RMS Carpathia arrived about 2 hours after the sinking, rescuing all survivors at that time.
 
-<img src="assets/Timeline_Titanic.png" width=100%>
+![Timeline_Titanic](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Timeline_Titanic.png?raw=true)
 
 ## Machine Learning expectations
 
@@ -22,7 +22,7 @@ What do we expect from the Machine Learning approach in this challenge? Although
 
 By July/2024, the Leaderboard for the Kaggle competition showed the results of 17,700 submissions, evaluated by the predictions' accuracy (from 0 to 1) on the testing dataset. More than half of the submissions scored between 0.75 and 0.80, with **more than 6,000 results between 0.7725 and 0.7775**. As a reference, the competition offers a very basic tutorial with a score of 0.7750. Based on these results, **achieving a score close to 0.80 is already a challenge**. As a curious fact, I will not neglect that some participants reached 1.00 (perfect) accuracy, but that's only because they are using a file with the solution, where all correct predictions can be manually copied and submitted!
 
-<img src="assets/LB_Titanic_figure.png" width=100%>
+![LB_Titanic_figure](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/LB_Titanic_figure.png?raw=true)
 
 ## Feature engineering
 
@@ -44,21 +44,21 @@ The Titanic competition includes **two datasets: "train", with 891 entries** and
 
 Some features carry straight-forward information, such as Pclass, Sex or Age. Other features, for example Cabin or Name, are less obvious or have encoded information. Below, you will find the **original distribution and survival rates** for the Age and Sex features, as well as a WordCloud for the Cabin feature (listing all unique values). 
 
-<img src="assets/Distribution_Rates_Sex.png" width=100%>
-<img src="assets/Distribution_Rates_Age.png" width=100%>
-<img src="assets/Cabin_Wordcloud_Original.png" width=100%>
+![Distribution_Rates_Sex](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Distribution_Rates_Sex.png?raw=true)
+![Distribution_Rates_Age](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Distribution_Rates_Age.png?raw=true)
+![Cabin_Wordcloud_Original](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Cabin_Wordcloud_Original.png?raw=true)
 
 In all cases, the missing values were filled according to carefully chosen criteria for each feature. Furthermore, **new features were engineered based on the original information**. For example, I generated the new Title feature from the Name data, which encodes information about the gender (Mr. vs Ms.), age (Master vs Mr., only for males) and marital status (Ms. vs Mrs., only for females). There were other titles such as Dr., Countess or Capt., much less frequent, which I grouped in the "Rare" category.
 
-<img src="assets/Distribution_Rates_Title.png" width=100%>
+![Distribution_Rates_Title](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Distribution_Rates_Title.png?raw=true)
 
 Another example of feature engineering is the **heavy data edition for the Cabin feature, with 80% missing values!** Normally, such incomplete feature would be dropped, but in this case there is a high correlation between missing Cabin values and low survival rates, probably because the cabin data couldn't be retrieved from the victims. Therefore, I compute the missing values as "X", and additionally group the known values according to the deck level in the ship, named from "A" to "G" in descending order.
 
-<img src="assets/Distribution_Rates_Cabin.png" width=100%>
+![Distribution_Rates_Cabin](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Distribution_Rates_Cabin.png?raw=true)
 
 After engineering features, **the original set of 10 features** (excluding the survival status) **grew to 36 numeric and One-Hot encoded features**, meaning that they are ready for any Machine Learning algorithm. However, more is not necessary better, so I studied the correlation matrix for the training dataset and selected those features highly correlated with the survival rate.
 
-<img src="assets/Correlations_Training.png" width=100%>
+![Correlations_Training](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Correlations_Training.png?raw=true)
 
 ## Machine Learning results
 
@@ -72,11 +72,11 @@ Building a clean dataset, including feature engineering and selection, was half 
 
 As a first exploration stage, I trained and evaluated all models using default hyperparameters, and short-listed those that scored higher than 0.78, already better than the average competition performance 0.7725-0.7775. From there, I worked on the hyperparameters optimization, exploring many options for each model. In the following plot, you can see a wide span of 648 results displayed as a function of their training score (vertical axis) and submission score (horizontal axis).
 
-<img src="assets/ML_results_01.png" width=100%>
+![ML_results_01](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/ML_results_01.png?raw=true)
 
 On the right of the plot, many models scored better than the average results, and the best score 0.7990 belonged to a Stacking model with a final LinearSVC layer (S_SVC). Looking for further optimization, I took this S_SVC model and finely tuned its hyperparameters. As a result, I produced many variations of the model with scores above the average, but I couldn't improve the 0.7990 record.
 
-<img src="assets/ML_results_02.png" width=100%>
+![ML_results_02](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/ML_results_02.png?raw=true)
 
 ## Conclusions
 
@@ -84,4 +84,4 @@ As I mentioned at the beggining, scoring around 0.8000 is a big challenge, and I
 
 My work stands as an example of a deep study of the *Titanic: Machine Learning for Disaster* competition, with a strong focus on feature engineering and the development of Machine Learning model based on Shallow Learning algorithms with different complexities. The code is fully documented and transparent, guiding the reader step by step and explaining my lines of thought. I invite you to read it and make any comments and suggestions either in the [Kaggle](https://www.kaggle.com/code/fertmeneses/titanic-kaggle-full-analysis) or [Github](https://github.com/Fertmeneses/titanic-ML-from-disaster) versions, any feedback is very welcome!
 
-<img src="assets/Z_bottom_banner.png" width=100%>
+![Z_bottom_banner](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Z_bottom_banner.png?raw=true)
