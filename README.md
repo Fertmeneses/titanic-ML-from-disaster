@@ -8,7 +8,7 @@ The progamming code is written in Python language, including well-known librarie
 
 ## Introduction
 
-![Titanic_colorized](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Titanic_colorized.png)
+![Titanic_colorized]([https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Titanic_colorized.png](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Titanic_colorized.png?raw=true))
 
 The Titanic started its voyage in Southampton (UK) on 10 April 1912, made stops in Cherbourg (France), Queenstown (nowadays Cobh, Ireland) and then sailed to New York (US). Unfortunately, the ship never reached its destination but **sank in the Atlantic ocean on 15 April 1912, after colliding with in iceberg**.
 
