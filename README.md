@@ -18,9 +18,9 @@ The collision with the iceberg ocurred around 23:40, with most of the passengers
 
 ## Machine Learning expectations
 
-What do we expect from the Machine Learning approach in this challenge? Although we have much information available, **predicting whether a passenger survived the Titanic tragedy is not a deterministic problem**. Some passengers had a higher chance of survival than others, for example given their class or gender, but that didn't translate into certainty. Although the Machine Learning algorithm should easily find clear correlations between the dataset features and the survival chance, **the real challenge is to discover "hidden" information, those subtle within the data patterns that escape our human intuition and may improve the predictions**.
+What do we expect from the Machine Learning approach in this challenge? Although we have much information available, **predicting whether a passenger survived the Titanic tragedy is not a deterministic problem**. Some passengers had a higher chance of survival than others, for example given their class or gender, but that didn't translate into certainty. Although the Machine Learning algorithm should easily find clear correlations between the dataset features and the survival chance, **the real challenge is to discover "hidden" information, those subtle hints within the data patterns that escape our human intuition and may improve the predictions**.
 
-By July/2024, the Leaderboard for the Kaggle competition showed the results of 17,700 submissions, evaluated by the predictions' accuracy (from 0 to 1) on the testing dataset. More than half of the submissions scored between 0.75 and 0.80, with **more than 6,000 results between 0.7725 and 0.7775**. As a reference, the competition offers a very basic tutorial with a score of 0.7750. Based on these results, **achieving a score close to 0.80 is already a challenge**. As a curious fact, I will not neglect that some participants reached 1.00 (perfect) accuracy, but that's only because they are using a file with the solution, where all correct predictions can be manually copied and submitted!
+By July/2024, the Leaderboard for the Kaggle competition showed the results of 17,700 submissions, evaluated by the predictions' accuracy (from 0 to 1) on the testing dataset. More than half of the submissions scored between 0.75 and 0.80, with **more than 6,000 results between 0.7725 and 0.7775**. As a reference, the competition offers a very basic tutorial with a score of 0.7750. Based on these results, **achieving a score close to 0.80 is already a challenge**. As a curious fact, I will not neglect that some participants reached 1.00 (perfect) accuracy, but that's only because they used a file with the solution, where all correct predictions can be manually copied and submitted!
 
 ![LB_Titanic_figure](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/LB_Titanic_figure.png?raw=true)
 
@@ -32,7 +32,7 @@ The Titanic competition includes **two datasets: "train", with 891 entries** and
 
 - **Survival**: Whether a passenger survived (1) or not (0). [Only in training dataset]
 - **Name**: Passenger full name, including their title.
-- **Pclass**: Passenger class, either 1st (upper), 2nd or 3rd (lower) class.
+- **Pclass**: Passenger class, either 1st (upper), 2nd (middle) or 3rd (lower) class.
 - **Sex**: Female or male.
 - **Age**: Age in years.
 - **Sibsp**: Number of siblings and spouse aboard the Titanic.
@@ -42,17 +42,17 @@ The Titanic competition includes **two datasets: "train", with 891 entries** and
 - **Cabin**: Cabin number.  
 - **Embarked**: Port of embarkation (Cherbourg, Queenstown or Southampton)
 
-Some features carry straight-forward information, such as Pclass, Sex or Age. Other features, for example Cabin or Name, are less obvious or have encoded information. Below, you will find the **original distribution and survival rates** for the Age and Sex features, as well as a WordCloud for the Cabin feature (listing all unique values). 
+Some features carry straight-forward information, such as Pclass, Sex or Age. Other features, for example Cabin or Name, are less obvious or have encoded information. Below, you can see the **original distribution and survival rates** for the Age and Sex features, as well as a WordCloud for the Cabin feature (listing all unique values). 
 
 ![Distribution_Rates_Sex](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Distribution_Rates_Sex.png?raw=true)
 ![Distribution_Rates_Age](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Distribution_Rates_Age.png?raw=true)
 ![Cabin_Wordcloud_Original](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Cabin_Wordcloud_Original.png?raw=true)
 
-In all cases, the missing values were filled according to carefully chosen criteria for each feature. Furthermore, **new features were engineered based on the original information**. For example, I generated the new Title feature from the Name data, which encodes information about the gender (Mr. vs Ms.), age (Master vs Mr., only for males) and marital status (Ms. vs Mrs., only for females). There were other titles such as Dr., Countess or Capt., much less frequent, which I grouped in the "Rare" category.
+In all cases, I filled the missing values according to carefully chosen criteria for each feature. Furthermore, **I generated new features based on the original information**. For example, I engineered the new Title feature from the Name data, which encodes information about the gender (Mr. vs Ms.), age (Master vs Mr., only for males) and marital status (Ms. vs Mrs., only for females). There were other titles such as Dr., Countess or Capt., much less frequent, which I grouped in the "Rare" category.
 
 ![Distribution_Rates_Title](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Distribution_Rates_Title.png?raw=true)
 
-Another example of feature engineering is the **heavy data edition for the Cabin feature, with 80% missing values!** Normally, such incomplete feature would be dropped, but in this case there is a high correlation between missing Cabin values and low survival rates, probably because the cabin data couldn't be retrieved from the victims. Therefore, I compute the missing values as "X", and additionally group the known values according to the deck level in the ship, named from "A" to "G" in descending order.
+Another example of feature engineering is the **heavy data edition for the Cabin feature, with 80% missing values!** Normally, such incomplete feature would be dropped, but in this case there is a high correlation between missing Cabin values and low survival rates, probably because the cabin data couldn't be retrieved from the victims. Therefore, I compute the missing values as "X", and also grouped the known values according to the deck level in the ship, named from "A" to "G" in descending order.
 
 ![Distribution_Rates_Cabin](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Distribution_Rates_Cabin.png?raw=true)
 
@@ -80,8 +80,8 @@ On the right of the plot, many models scored better than the average results, an
 
 ## Conclusions
 
-As I mentioned at the beggining, scoring around 0.8000 is a big challenge, and I'm happy with my 0.7990 score, which I attribute to a careful feature engineering process and exploration of Machine Learning models. I'm sure there is room for improvement, and making a more intensive hyperparameters search would improve the performance above the 0.80 line. However, I think that the real progress would come with the development of new ideas for feature engineering, Machine Learning modeling and new strategies to avoid the overfitting problem during training.
+As I mentioned at the beggining, scoring around 0.8000 is a big challenge, and I'm happy with my **0.7990 score, which I attribute to a careful feature engineering process and exploration of Machine Learning models**. I'm sure there is room for improvement, and making a more intensive hyperparameters search would improve the performance above the 0.80 line. However, I think that **the real progress would come with the development of new ideas for feature engineering, Machine Learning modeling and new strategies to avoid the overfitting problem during training**.
 
-My work stands as an example of a deep study of the *Titanic: Machine Learning for Disaster* competition, with a strong focus on feature engineering and the development of Machine Learning model based on Shallow Learning algorithms with different complexities. The code is fully documented and transparent, guiding the reader step by step and explaining my lines of thought. I invite you to read it and make any comments and suggestions either in the [Kaggle](https://www.kaggle.com/code/fertmeneses/titanic-kaggle-full-analysis) or [Github](https://github.com/Fertmeneses/titanic-ML-from-disaster) versions, any feedback is very welcome!
+**My work stands as an example of a deep study of the *Titanic: Machine Learning for Disaster* competition, with a strong focus on feature engineering and the development of Machine Learning model based on Shallow Learning algorithms with different complexities**. The code is fully documented and transparent, guiding the reader step by step and explaining my lines of thought. I invite you to read it and make any comments and suggestions either in the [Kaggle](https://www.kaggle.com/code/fertmeneses/titanic-kaggle-full-analysis) or [Github](https://github.com/Fertmeneses/titanic-ML-from-disaster) versions, any feedback is very welcome!
 
 ![Z_bottom_banner](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Z_bottom_banner.png?raw=true)
