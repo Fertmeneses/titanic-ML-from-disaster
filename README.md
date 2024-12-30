@@ -62,7 +62,7 @@ After engineering features, **the original set of 10 features** (excluding the s
 
 ## Machine Learning results
 
-Building a clean dataset, including feature engineering and selection, was half of the work, the other half was exploring and optimizing Machine Learning algorithms to make good predictions. As the amount of information was limited (the training dataset has less than 900 entries), I used exclusively shallow learning algorithms, designing models with different complexities:
+Building a clean dataset, including feature engineering and selection, was half of the work, the other half was exploring and optimizing Machine Learning algorithms to make good predictions. As the amount of information was limited (the training dataset has less than 900 entries), **I used exclusively shallow learning algorithms, designing models with different complexities**:
 
 | Designation | Description | Libraries |
 | :---: | :---: | :---: |
@@ -70,11 +70,11 @@ Building a clean dataset, including feature engineering and selection, was half 
 | <span style="color:blue;font-weight:bold;">Ensemble</span> | Horizontal collection of basic models, final output via majority vote | VotingClassifier |
 | <span style="color:red;font-weight:bold;">Stacking</span> | Hierarchical collection of basic models, outputs are concatenated | StackingClassifier |
 
-As a first exploration stage, I trained and evaluated all models using default hyperparameters, and short-listed those that scored higher than 0.78, already better than the average competition performance 0.7725-0.7775. From there, I worked on the hyperparameters optimization, exploring many options for each model. In the following plot, you can see a wide span of 648 results displayed as a function of their training score (vertical axis) and submission score (horizontal axis).
+As a **first exploration stage, I trained and evaluated all models using default hyperparameters, and short-listed those that scored higher than 0.78**, already better than the average competition performance 0.7725-0.7775. From there, I worked on the **hyperparameters optimization, exploring many options for each model**. In the following plot, you can see a wide span of 648 results displayed as a function of their training score (vertical axis) and submission score (horizontal axis).
 
 ![ML_results_01](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/ML_results_01.png?raw=true)
 
-On the right of the plot, many models scored better than the average results, and the best score 0.7990 belonged to a Stacking model with a final LinearSVC layer (S_SVC). Looking for further optimization, I took this S_SVC model and finely tuned its hyperparameters. As a result, I produced many variations of the model with scores above the average, but I couldn't improve the 0.7990 record.
+On the right of the plot, many models scored better than the average results, and **the best score 0.7990 belonged to a Stacking model with a final LinearSVC layer (S_SVC)**. Looking for further optimization, I took this S_SVC model and finely tuned its hyperparameters. As a result, I produced many variations of the model with scores above the average, but I couldn't improve the 0.7990 record.
 
 ![ML_results_02](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/ML_results_02.png?raw=true)
 
@@ -82,6 +82,6 @@ On the right of the plot, many models scored better than the average results, an
 
 As I mentioned at the beggining, scoring around 0.8000 is a big challenge, and I'm happy with my **0.7990 score, which I attribute to a careful feature engineering process and exploration of Machine Learning models**. I'm sure there is room for improvement, and making a more intensive hyperparameters search would improve the performance above the 0.80 line. However, I think that **the real progress would come with the development of new ideas for feature engineering, Machine Learning modeling and new strategies to avoid the overfitting problem during training**.
 
-**My work stands as an example of a deep study of the *Titanic: Machine Learning for Disaster* competition, with a strong focus on feature engineering and the development of Machine Learning model based on Shallow Learning algorithms with different complexities**. The code is fully documented and transparent, guiding the reader step by step and explaining my lines of thought. I invite you to read it and make any comments and suggestions either in the [Kaggle](https://www.kaggle.com/code/fertmeneses/titanic-kaggle-full-analysis) or [Github](https://github.com/Fertmeneses/titanic-ML-from-disaster) versions, any feedback is very welcome!
+My work stands as an example of a deep study of the *Titanic: Machine Learning for Disaster* competition, with a **strong focus on feature engineering and the development of Machine Learning model based on Shallow Learning algorithms with different complexities**. The code is fully documented and transparent, guiding the reader step by step and explaining my lines of thought. I invite you to read it and make any comments and suggestions either in the [Kaggle](https://www.kaggle.com/code/fertmeneses/titanic-kaggle-full-analysis) or [Github](https://github.com/Fertmeneses/titanic-ML-from-disaster) versions, any feedback is very welcome!
 
 ![Z_bottom_banner](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Z_bottom_banner.png?raw=true)
