@@ -88,7 +88,7 @@ My work stands as an example of a deep study of the *Titanic: Machine Learning f
 
 -----
 
-[🔼 Back to top](#titanic-:-machine-learning-from-disaster)
+[🔼 Back to top](#titanic-machine-learning-from-disaster)
 
 <a href="https://fertmeneses.github.io/" target="_blank"> <img src="https://github.com/Fertmeneses/fertmeneses.github.io/blob/main/assets/website_icon_FM.jpg?raw=true" alt="Logo FM" style="width: 3%;" /> </a> <a href="https://fertmeneses.github.io/" target="_blank"> Go to Home Page </a> 
 
