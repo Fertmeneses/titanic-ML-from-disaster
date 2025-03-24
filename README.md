@@ -1,3 +1,5 @@
+<a href="https://fertmeneses.github.io/" target="_blank"> <img src="https://github.com/Fertmeneses/fertmeneses.github.io/blob/main/assets/website_icon_FM.jpg?raw=true" alt="Logo FM" style="width: 3%;" /> </a> <a href="https://fertmeneses.github.io/" target="_blank"> Go to Home Page </a> 
+
 # Titanic: Machine Learning from Disaster
 
 Hi there! Welcome to a **deep study** for the *Titanic - Machine Learning from Disaster* competition, hosted by **Kaggle**. You can find my original competition notebook in this [link](https://www.kaggle.com/code/fertmeneses/titanic-kaggle-full-analysis)👈🏽.
@@ -83,5 +85,11 @@ On the right of the plot, many models scored better than the average results, an
 As I mentioned at the beggining, scoring around 0.8000 is a big challenge, and I'm happy with my **0.7990 score, which I attribute to a careful feature engineering process and exploration of Machine Learning models**. I'm sure there is room for improvement, and making a more intensive hyperparameters search would improve the performance above the 0.80 line. However, I think that **the real progress would come with the development of new ideas for feature engineering, Machine Learning modeling and new strategies to avoid the overfitting problem during training**.
 
 My work stands as an example of a deep study of the *Titanic: Machine Learning for Disaster* competition, with a **strong focus on feature engineering and the development of Machine Learning model based on Shallow Learning algorithms with different complexities**. The code is fully documented and transparent, guiding the reader step by step and explaining my lines of thought. I invite you to read it and make any comments and suggestions either in the [Kaggle](https://www.kaggle.com/code/fertmeneses/titanic-kaggle-full-analysis) or [Github](https://github.com/Fertmeneses/titanic-ML-from-disaster) versions, any feedback is very welcome!
+
+-----
+
+[🔼 Back to top](#titanic:-machine-learning-from-disaster)
+
+<a href="https://fertmeneses.github.io/" target="_blank"> <img src="https://github.com/Fertmeneses/fertmeneses.github.io/blob/main/assets/website_icon_FM.jpg?raw=true" alt="Logo FM" style="width: 3%;" /> </a> <a href="https://fertmeneses.github.io/" target="_blank"> Go to Home Page </a> 
 
 ![Z_bottom_banner](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Z_bottom_banner.png?raw=true)
