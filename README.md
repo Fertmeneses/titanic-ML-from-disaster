@@ -1,4 +1,4 @@
-<a href="https://fertmeneses.github.io/" target="_blank"> <img src="https://github.com/Fertmeneses/fertmeneses.github.io/blob/main/assets/website_icon_FM.jpg?raw=true" alt="Logo FM" style="width: 3%;" /> </a> <a href="https://fertmeneses.github.io/" target="_blank"> Go to Home Page </a> 
+<a href="https://fertmeneses.github.io/" target="_blank"> <img src="assets/website_icon_FM.jpg" alt="Logo FM" style="width: 3%;" /> </a> <a href="https://fertmeneses.github.io/" target="_blank"> Go to Home Page </a> 
 
 # Titanic: Machine Learning from Disaster
 
@@ -10,13 +10,17 @@ The progamming code is written in Python language, including well-known librarie
 
 ## Introduction
 
-![Titanic_colorized](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Titanic_colorized.png?raw=true)
+<center><figure>
+  <img src="assets/Titanic_colorized.png" alt="Titanic ship"> 
+</figure></center>
 
 The Titanic started its voyage in Southampton (UK) on 10 April 1912, made stops in Cherbourg (France), Queenstown (nowadays Cobh, Ireland) and then sailed to New York (US). Unfortunately, the ship never reached its destination but **sank in the Atlantic ocean on 15 April 1912, after colliding with in iceberg**.
 
 The collision with the iceberg ocurred around 23:40, with most of the passengers already gone to bed, and the evacuation was carried out in a very disorganized way, with unequal treatment of passengers from different classes. **The 20 lifeboats carried by the ship could only accomodate 1,178 people, out of the 2,224 passengers and crew**. The vessel RMS Carpathia arrived about 2 hours after the sinking, rescuing all survivors at that time.
 
-![Timeline_Titanic](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Timeline_Titanic.png?raw=true)
+<center><figure>
+  <img src="assets/Timeline_Titanic.png" alt="Timeline Titanic"> 
+</figure></center>
 
 ## Machine Learning expectations
 
@@ -24,7 +28,9 @@ What do we expect from the Machine Learning approach in this challenge? Although
 
 By July/2024, the Leaderboard for the Kaggle competition showed the results of 17,700 submissions, evaluated by the predictions' accuracy (from 0 to 1) on the testing dataset. More than half of the submissions scored between 0.75 and 0.80, with **more than 6,000 results between 0.7725 and 0.7775**. As a reference, the competition offers a very basic tutorial with a score of 0.7750. Based on these results, **achieving a score close to 0.80 is already a challenge**. As a curious fact, I will not neglect that some participants reached 1.00 (perfect) accuracy, but that's only because they used a file with the solution, where all correct predictions can be manually copied and submitted!
 
-![LB_Titanic_figure](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/LB_Titanic_figure.png?raw=true)
+<center><figure>
+  <img src="assets/LB_Titanic_figure.png" alt="Leaderboard statistics"> 
+</figure></center>
 
 ## Feature engineering
 
@@ -46,21 +52,35 @@ The Titanic competition includes **two datasets: "train", with 891 entries** and
 
 Some features carry straight-forward information, such as Pclass, Sex or Age. Other features, for example Cabin or Name, are less obvious or have encoded information. Below, you can see the **original distribution and survival rates** for the Age and Sex features, as well as a WordCloud for the Cabin feature (listing all unique values). 
 
-![Distribution_Rates_Sex](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Distribution_Rates_Sex.png?raw=true)
-![Distribution_Rates_Age](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Distribution_Rates_Age.png?raw=true)
-![Cabin_Wordcloud_Original](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Cabin_Wordcloud_Original.png?raw=true)
+<center><figure>
+  <img src="assets/Distribution_Rates_Sex.png" alt="Distribution rates for Sex feature"> 
+</figure></center>
+
+<center><figure>
+  <img src="assets/Distribution_Rates_Age.png" alt="Distribution rates for Age feature"> 
+</figure></center>
+
+<center><figure>
+  <img src="assets/Cabin_Wordcloud_Original.png" alt="Wordcloud for Cabin original feature"> 
+</figure></center>
 
 In all cases, I filled the missing values according to carefully chosen criteria for each feature. Furthermore, **I generated new features based on the original information**. For example, I engineered the new Title feature from the Name data, which encodes information about the gender (Mr. vs Ms.), age (Master vs Mr., only for males) and marital status (Ms. vs Mrs., only for females). There were other titles such as Dr., Countess or Capt., much less frequent, which I grouped in the "Rare" category.
 
-![Distribution_Rates_Title](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Distribution_Rates_Title.png?raw=true)
+<center><figure>
+  <img src="assets/Distribution_Rates_Title.png" alt="Distribution rates for Title feature"> 
+</figure></center>
 
 Another example of feature engineering is the **heavy data edition for the Cabin feature, with 80% missing values!** Normally, such incomplete feature would be dropped, but in this case there is a high correlation between missing Cabin values and low survival rates, probably because the cabin data couldn't be retrieved from the victims. Therefore, I compute the missing values as "X", and also grouped the known values according to the deck level in the ship, named from "A" to "G" in descending order.
 
-![Distribution_Rates_Cabin](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Distribution_Rates_Cabin.png?raw=true)
+<center><figure>
+  <img src="assets/Distribution_Rates_Cabin.png" alt="Distribution rates for Cabin engineered feature"> 
+</figure></center>
 
 After engineering features, **the original set of 10 features** (excluding the survival status) **grew to 36 numeric and One-Hot encoded features**, meaning that they are ready for any Machine Learning algorithm. However, more is not necessary better, so I studied the correlation matrix for the training dataset and selected those features highly correlated with the survival rate.
 
-![Correlations_Training](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Correlations_Training.png?raw=true)
+<center><figure>
+  <img src="assets/Correlations_Training.png" alt="Correlation matrix"> 
+</figure></center>
 
 ## Machine Learning results
 
@@ -74,11 +94,15 @@ Building a clean dataset, including feature engineering and selection, was half 
 
 As a **first exploration stage, I trained and evaluated all models using default hyperparameters, and short-listed those that scored higher than 0.78**, already better than the average competition performance 0.7725-0.7775. From there, I worked on the **hyperparameters optimization, exploring many options for each model**. In the following plot, you can see a wide span of 648 results displayed as a function of their training score (vertical axis) and submission score (horizontal axis).
 
-![ML_results_01](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/ML_results_01.png?raw=true)
+<center><figure>
+  <img src="assets/ML_results_01.png" alt="Machine Learning Results in First Stage"> 
+</figure></center>
 
 On the right of the plot, many models scored better than the average results, and **the best score 0.7990 belonged to a Stacking model with a final LinearSVC layer (S_SVC)**. Looking for further optimization, I took this S_SVC model and finely tuned its hyperparameters. As a result, I produced many variations of the model with scores above the average, but I couldn't improve the 0.7990 record.
 
-![ML_results_02](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/ML_results_02.png?raw=true)
+<center><figure>
+  <img src="assets/ML_results_02.png" alt="Machine Learning Results in Second Stage"> 
+</figure></center>
 
 ## Conclusions
 
@@ -90,6 +114,8 @@ My work stands as an example of a deep study of the *Titanic: Machine Learning f
 
 [🔼 Back to top](#titanic-machine-learning-from-disaster)
 
-<a href="https://fertmeneses.github.io/" target="_blank"> <img src="https://github.com/Fertmeneses/fertmeneses.github.io/blob/main/assets/website_icon_FM.jpg?raw=true" alt="Logo FM" style="width: 3%;" /> </a> <a href="https://fertmeneses.github.io/" target="_blank"> Go to Home Page </a> 
+<a href="https://fertmeneses.github.io/" target="_blank"> <img src="assets/website_icon_FM.jpg" alt="Logo FM" style="width: 3%;" /> </a> <a href="https://fertmeneses.github.io/" target="_blank"> Go to Home Page </a> 
 
-![Z_bottom_banner](https://github.com/Fertmeneses/titanic-ML-from-disaster/blob/main/assets/Z_bottom_banner.png?raw=true)
+<center><figure>
+  <img src="assets/Z_bottom_banner.png" alt="Banner> 
+</figure></center>
