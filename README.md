@@ -117,5 +117,5 @@ My work stands as an example of a deep study of the *Titanic: Machine Learning f
 <a href="https://fertmeneses.github.io/" target="_blank"> <img src="assets/website_icon_FM.jpg" alt="Logo FM" style="width: 3%;" /> </a> <a href="https://fertmeneses.github.io/" target="_blank"> Go to Home Page </a> 
 
 <center><figure>
-  <img src="assets/Z_bottom_banner.png" alt="Banner> 
+  <img src="assets/Z_bottom_banner.png" alt="Banner"> 
 </figure></center>
